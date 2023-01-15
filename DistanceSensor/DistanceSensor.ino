@@ -15,11 +15,7 @@ void setup(){
  }
 
 void loop(){
-  readingDistance();
-}
-
-void readingDistance(){
-  for (int i=0;i<=n;i++){
+    for (int i=0;i<=n;i++){
     distance[i]=0;
     for (int j=0;j<1;j++){
       //Sending Pulse 10 Microseconds
@@ -34,9 +30,9 @@ void readingDistance(){
       distance[i] =  pulseIn(echoPins[i], HIGH,50000);
       delay(50);
     }
-    distance[i] = (distance[i]/2)/29.1;
+    distance[i] = distance[i]*0.034/2;
+    Serial.println();
     Serial.println(distance[i]);
-    Serial.println(" cm");
+    Serial.println(" CM");
   }
-  delay(1000);
 }
