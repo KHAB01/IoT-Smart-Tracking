@@ -2,7 +2,7 @@
 const int trigPins[6] = {2,4,6,8,10,12};
 const int echoPins[6] = {3,5,7,9,11,13};
 //
-
+String msg="";
 int distance[6];
 //sensors numbers
 const int n=6;
@@ -15,7 +15,10 @@ void setup(){
  }
 
 void loop(){
-    for (int i=0;i<=n;i++){
+  getDistance();
+}
+void getDistance(){
+   for (int i=0;i<=n;i++){
     distance[i]=0;
     for (int j=0;j<1;j++){
       //Sending Pulse 10 Microseconds
@@ -31,8 +34,7 @@ void loop(){
       delay(50);
     }
     distance[i] = distance[i]*0.034/2;
-    Serial.println();
-    Serial.println(distance[i]);
+    Serial.print(distance[i]);
     Serial.println(" CM");
   }
 }
