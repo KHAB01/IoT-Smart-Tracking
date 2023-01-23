@@ -3,15 +3,17 @@ import Ai from "./Images/ai-lab.png"
 import { useEffect, useState } from 'react';
 
 import { Icon } from "@iconify/react"
+import { useRef } from 'react';
 
 
 
 
 const Map = () => {
 
+ 
   
 
-  const [color] = useState('0 1px 10px 5px red');
+
 
   const [coords, setCoords] = useState({x: 0, y: 0});
   const [point1State, setPoint1State] = useState("default");
@@ -25,22 +27,9 @@ const Map = () => {
   const [point9State, setPoint9State] = useState("default");
   const [point10State, setPoint10State] = useState("default");
 
-  const [setGlobalCoords] = useState({x: 0, y: 0});
+  
 
-  useEffect(() => {
-    // 👇️ get global mouse coordinates
-    const handleWindowMouseMove = event => {
-      setGlobalCoords({
-        x: event.screenX,
-        y: event.screenY,
-      });
-    };
-    window.addEventListener('mousemove', handleWindowMouseMove);
 
-    return () => {
-      window.removeEventListener('mousemove', handleWindowMouseMove);
-    };
-  }, []);
 
   
   const handleMouseMove = event => {
@@ -67,7 +56,7 @@ const Map = () => {
 
     const point3 = document.querySelector(".capteur-3");
     const point3Position = point3.getBoundingClientRect();
-    if (event.clientX > (point3Position.left - 120) && event.clientX < (point3Position.right + 65) && event.clientY > (point3Position.top -range) && event.clientY < (point3Position.bottom +range )) {
+    if (event.clientX > (point3Position.left - 120) && event.clientX < (point3Position.right + 5) && event.clientY > (point3Position.top -10) && event.clientY < (point3Position.bottom +range )) {
       setPoint3State("highlighted");
     } else {
       setPoint3State("default");
@@ -99,7 +88,7 @@ const Map = () => {
 
     const point7 = document.querySelector(".capteur-7");
     const point7Position = point7.getBoundingClientRect();
-    if (event.clientX > (point7Position.left - 80) && event.clientX < (point7Position.right +100) && event.clientY > (point7Position.top - 100) && event.clientY < (point7Position.bottom + range)) {
+    if (event.clientX > (point7Position.left - 210) && event.clientX < (point7Position.right +160) && event.clientY > (point7Position.top - 100) && event.clientY < (point7Position.bottom + 10)) {
       setPoint7State("highlighted");
     } else {
       setPoint7State("default");
@@ -107,7 +96,7 @@ const Map = () => {
 
     const point8 = document.querySelector(".capteur-8");
     const point8Position = point8.getBoundingClientRect();
-    if (event.clientX > (point8Position.left - 90) && event.clientX < (point8Position.right + 65) && event.clientY > (point8Position.top - 100) && event.clientY < (point8Position.bottom + 80)) {
+    if (event.clientX > (point8Position.left - 270) && event.clientX < (point8Position.right + 65) && event.clientY > (point8Position.top - 80) && event.clientY < (point8Position.bottom + 100)) {
       setPoint8State("highlighted");
     } else {
       setPoint8State("default");
@@ -115,7 +104,7 @@ const Map = () => {
 
     const point9 = document.querySelector(".capteur-9");
     const point9Position = point9.getBoundingClientRect();
-    if (event.clientX > (point9Position.left - 90) && event.clientX < (point9Position.right + 65) && event.clientY > (point9Position.top - 100) && event.clientY < (point9Position.bottom + 80)) {
+    if (event.clientX > (point9Position.left+60) && event.clientX < (point9Position.right +200) && event.clientY < (point9Position.top +900) && event.clientY < (point9Position.bottom + 80)) {
       setPoint9State("highlighted");
     } else {
       setPoint9State("default");
@@ -123,7 +112,7 @@ const Map = () => {
 
     const point10 = document.querySelector(".capteur-10");
     const point10Position = point10.getBoundingClientRect();
-    if (event.clientX < (point10Position.left + 50)  && event.clientY > (point10Position.top - 100) && event.clientY < (point10Position.bottom + 80)) {
+    if (event.clientX > (point10Position.left-10) && event.clientX < (point10Position.right +210) && event.clientY > (point10Position.top -30) && event.clientY < (point10Position.bottom + 190)) {
       setPoint10State("highlighted");
     } else {
       setPoint10State("default");
@@ -151,7 +140,9 @@ const Map = () => {
       <div className={`capteur-10 ${point10State}`}></div>
  
       <Icon  icon="material-symbols:location-on" className="location-icon"  />
+      
       </div>
+      
     
 
     )
