@@ -5,8 +5,6 @@ app = Flask(__name__)
 
 app.config['MQTT_BROKER_URL'] = '192.168.10.18'
 app.config['MQTT_BROKER_PORT'] = 1883
-app.config['MQTT_USERNAME'] = ''  # Set this item when you need to verify username and password
-app.config['MQTT_PASSWORD'] = ''  # Set this item when you need to verify username and password
 app.config['MQTT_KEEPALIVE'] = 5  # Set KeepAlive time in seconds
 app.config['MQTT_TLS_ENABLED'] = False  # If your server supports TLS, set it True
 topic = 'rasp/he'
@@ -30,4 +28,7 @@ def handle_mqtt_message(client, userdata, message):
     print('Received message on topic: {topic} with payload: {payload}'.format(**data))
 
 if __name__ == '__main__':
-    app.run(host='127.0.0.1/', port=5000)
+    try:
+        app.run(host='127.0.0.1/', port=5002)
+    except:
+        print("Error")
