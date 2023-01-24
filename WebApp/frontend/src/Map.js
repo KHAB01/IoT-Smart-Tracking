@@ -25,6 +25,7 @@ const Map = () => {
   const [point8State, setPoint8State] = useState("default");
   const [point9State, setPoint9State] = useState("default");
   const [point10State, setPoint10State] = useState("default");
+  
 
   
 
