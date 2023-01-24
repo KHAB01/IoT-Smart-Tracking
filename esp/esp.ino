@@ -89,10 +89,10 @@ void callback(char *topic, byte *payload, unsigned int length)
 }
 void sensorData(){
      if(Serial2.available()>0){
-    char buff[3];
+    char buff[30];
      incomingString = Serial2.readStringUntil('\n');
-     subString = incomingString.substring(0,3);
-     subString.toCharArray(buff,3);
+     subString = incomingString.substring(0,30);
+     subString.toCharArray(buff,30);
      Serial.println(buff);
      client.publish("rasp/he",buff,true);
      incomingString="";
