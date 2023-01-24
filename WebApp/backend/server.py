@@ -1,34 +1,27 @@
-from flask import Flask, request, jsonify
-from flask_mqtt import Mqtt
+# Import flask and datetime module for showing date and time
+from flask import Flask
+from math import *
 
+
+# Initializing flask app
 app = Flask(__name__)
 
-app.config['MQTT_BROKER_URL'] = '192.168.10.18'
-app.config['MQTT_BROKER_PORT'] = 1883
-app.config['MQTT_KEEPALIVE'] = 5  # Set KeepAlive time in seconds
-app.config['MQTT_TLS_ENABLED'] = False  # If your server supports TLS, set it True
-topic = 'rasp/he'
 
-mqtt_client = Mqtt(app)
+# Route for seeing a data
+@app.route('/data')
+def get_time():
+    d=60*1.4
+    y= d/(sqrt(1+tan(7.5*0.0174533)**2))
+    x=sqrt(d**2-y**2)
 
-@mqtt_client.on_connect()
-def handle_connect(client, userdata, flags, rc):
-    if rc == 0:
-        print('Connected successfully')
-        mqtt_client.subscribe(topic) # subscribe topic
-    else:
-        print('Bad connection. Code:', rc)
+	# Returning an api for showing in reactjs
+    return {
+		'x':x,
+		"y":y
 
-@mqtt_client.on_message()
-def handle_mqtt_message(client, userdata, message):
-    data = dict(
-        topic=message.topic,
-        payload=message.payload.decode()
-    )
-    print('Received message on topic: {topic} with payload: {payload}'.format(**data))
+		}
 
+	
+# Running app
 if __name__ == '__main__':
-    try:
-        app.run(host='127.0.0.1/', port=5002)
-    except:
-        print("Error")
+	app.run(host='127.0.0.1/', port=5000)
