@@ -8,10 +8,6 @@ import { Icon } from "@iconify/react"
 
 
 const Map = () => {
-
-
-
-
   const [point1State, setPoint1State] = useState("default");
   const [point2State, setPoint2State] = useState("default");
   const [point3State, setPoint3State] = useState("default");
@@ -128,19 +124,8 @@ useEffect(() => {
         })
     );
 }, []);
-
-  
-
-
-
- 
     return(
-
-        
-         
     <div  className="map" style={{backgroundSize:"contain",backgroundRepeat:"no-repeat",backgroundPosition:"center",objectFit:"cover"}}>
-
-
       <img className="imageback" src={Ai}></img>
       <div className={`capteur-1 ${point1State}`}></div>
       <div className={`capteur-2 ${point2State}`}></div>
@@ -152,15 +137,14 @@ useEffect(() => {
       <div className={`capteur-8 ${point8State}`}></div>
       <div className={`capteur-9 ${point9State}`}></div>
       <div className={`capteur-10 ${point10State}`}></div>
- 
+
       <Icon  style={{ position: 'absolute', left:data.x, top: data.y}} icon="material-symbols:location-on" className="location-icon"  />
- 
+
       </div>
       
     
 
     )
-       
     
 }
 
