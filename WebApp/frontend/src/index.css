@@ -47,7 +47,7 @@ body {
     background-color: red;
     position: absolute; /* position the element according to the nearest positioned ancestor */
     top: 10px; /* position the element at the top */
-    left: calc(50% - 130px);
+    left: calc(50% - 100px);
     z-index: 1; /* set the stack order of the element */
   }
 
@@ -93,8 +93,8 @@ body {
     background-color: red;
     position: absolute; /* position the element according to the nearest positioned ancestor */
     z-index: 1; /* set the stack order of the element */
-    bottom: 10px; /* position the element at the top */
-    right: calc(50% + 110px);
+    top: 375px; /* position the element at the top */
+    left: calc(50% - 100px);
   }
 
   .capteur-6 {
@@ -105,7 +105,7 @@ body {
     position: absolute; /* position the element according to the nearest positioned ancestor */
     z-index: 1; /* set the stack order of the element */
  /* position the element at the top */
-    left: calc(50% - 360px);
+    left: calc(50% - 210px);
   }
   .capteur-7 {
     width: 20px;
@@ -136,8 +136,8 @@ body {
     position: absolute; /* position the element according to the nearest positioned ancestor */
     z-index: 1; /* set the stack order of the element */
  /* position the element at the top */
-    left: calc(50% - 295px);
-    bottom:140px;
+    left: calc(50% - 180px);
+    top:300px;
   }
   .capteur-10 {
     width: 20px;
@@ -147,7 +147,7 @@ body {
     position: absolute; /* position the element according to the nearest positioned ancestor */
     z-index: 1; /* set the stack order of the element */
  /* position the element at the top */
-    left: calc(50% - 295px);
-    top:140px;
+    left: calc(50% - 180px);
+    top:80px;
   }
 
