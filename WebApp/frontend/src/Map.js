@@ -153,8 +153,8 @@ useEffect(() => {
       <div className={`capteur-9 ${point9State}`}></div>
       <div className={`capteur-10 ${point10State}`}></div>
  
-      <Icon  style={{ position: 'absolute', left: data.x, top: data.y }} icon="material-symbols:location-on" className="location-icon"  />
-      
+      <Icon  style={{ position: 'absolute', left:data.x, top: data.y}} icon="material-symbols:location-on" className="location-icon"  />
+ 
       </div>
       
     
