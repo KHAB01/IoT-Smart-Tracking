@@ -15,8 +15,7 @@ captor_7 = {'x': 677, 'y': 284.5375061035156, 'd': 0}
 captor_8 = {'x': 687, 'y': 120, 'd': 0}
 captor_9 = {'x': 592, 'y': 10, 'd': 0}
 
-# data = [captor_1, captor_2, captor_3, captor_4, captor_5, captor_6,captor_7,captor_8,captor_9]
-data=[60]
+data = [captor_1, captor_2, captor_3, captor_4, captor_5, captor_6,captor_7,captor_8,captor_9]
 
 # Route for seeing a data
 @app.route('/data')
@@ -25,10 +24,10 @@ def get_time():
     yf = 0
     dataa=[]
     for i in range(0, len(data)):
-        # if data[i]['d'] != 0 :
-        #     xf = data[i]['x']
-        #     yf = data[i]['y']
-        #     d = data[i]['d']
+        if data[i]['d'] != 0 :
+            xf = data[i]['x']
+            yf = data[i]['y']
+            d = data[i]['d']
         d=data[i]
         
 
@@ -48,3 +47,16 @@ def get_time():
 # Running app
 if __name__ == '__main__':
     app.run(host='127.0.0.1/', port=5000)
+
+
+
+
+
+
+
+
+
+
+
+
+
