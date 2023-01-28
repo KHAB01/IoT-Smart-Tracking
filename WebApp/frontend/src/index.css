@@ -27,17 +27,11 @@ body {
 .location-icon {
     font-size: 2rem;
     color: blue;
+    position: absolute;
+ 
   }
 
-.location-marker{
-  
-  width: 20px;
-  height: 20px;
-  border-radius: 50%; /* make the element circular */
-  background-color: rgb(0, 26, 255);
-  
 
-}
 
 
   .capteur-1 {
@@ -114,7 +108,7 @@ body {
     background-color: red;
     position: absolute; /* position the element according to the nearest positioned ancestor */
     z-index: 1; /* set the stack order of the element */
-    right: calc(50% - 188px);
+    left: calc(50% + 165px);
     bottom:100px;
   }
   .capteur-8 {
@@ -125,7 +119,7 @@ body {
     position: absolute; /* position the element according to the nearest positioned ancestor */
     z-index: 1; /* set the stack order of the element */
  /* position the element at the top */
-    right: calc(50% - 95px);
+    left: calc(50% + 80px);
     top:10px;
   }
   .capteur-9 {
