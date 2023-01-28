@@ -54,9 +54,8 @@ void connectTo(){
 
     client.setServer(mqtt_server, mqtt_port);
     client.setCallback(callback);
-    client.subscribe("rasp/de");
     /***/
-    client.publish("rasp/he", device_id, true);
+    client.publish("distance/s", device_id, true);
 }
 void reconnect()
 {
@@ -67,8 +66,8 @@ void reconnect()
         if (client.connect(device_id))
         {
             Serial.println("Connected to MQTT");
-            client.subscribe("rasp/de");
-            client.publish("rasp/he", device_id, true);
+            client.subscribe("Distance_Sensor");
+            client.publish("distance/s", device_id, true);
         }
         else
         {
@@ -89,12 +88,12 @@ void callback(char *topic, byte *payload, unsigned int length)
 }
 void sensorData(){
      if(Serial2.available()>0){
-    char buff[30];
+    char buff[5];
      incomingString = Serial2.readStringUntil('\n');
-     subString = incomingString.substring(0,30);
-     subString.toCharArray(buff,30);
+     subString = incomingString.substring(0,4);
+     subString.toCharArray(buff,5);
      Serial.println(buff);
-     client.publish("rasp/he",buff,true);
+     client.publish("distance/s",buff,true);
      incomingString="";
 }
 }
