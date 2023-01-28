@@ -126,7 +126,7 @@ useEffect(() => {
 }, []);
     return(
     <div  className="map" style={{backgroundSize:"contain",backgroundRepeat:"no-repeat",backgroundPosition:"center",objectFit:"cover"}}>
-      <img className="imageback" src={Ai}></img>
+      <img className="imageback" src={Ai} alt=""></img>
       <div className={`capteur-1 ${point1State}`}></div>
       <div className={`capteur-2 ${point2State}`}></div>
       <div className={`capteur-3 ${point3State}`}></div>
