@@ -19,20 +19,19 @@ const Map = () => {
   const [point9State, setPoint9State] = useState("default");
   const [point10State, setPoint10State] = useState("default");
   
-  const [data, setData] = useState([]);
+  const [data, setdata] = useState([]);
 
 // Using useEffect for single rendering
 useEffect(() => {
     // Using fetch to fetch the api from 
     // flask server it will be redirected to proxy
     const intervalId = setInterval(() => {
-      fetch("/data")
+      fetch("/distance_s")
         .then(res => res.json())
         .then(data => {
-          setData(data);
+          set(data);
 
-         
-         const range = 300;
+        const range = 300;
             const point1 = document.querySelector(".capteur-1");
             const point1Position = point1.getBoundingClientRect();
             if (d.x > (point1Position.left - 80) && d.x < (point1Position.right + 100) && d.y > (point1Position.top - range) && d.y < (point1Position.bottom + range)) {
@@ -126,15 +125,25 @@ useEffect(() => {
     <div  className="map" style={{backgroundSize:"contain",backgroundRepeat:"no-repeat",backgroundPosition:"center",objectFit:"cover"}}>
       <img className="imageback" src={Ai} alt=""></img>
       <div className={`capteur-1 ${point1State}`}></div>
+      <input className={`input-1 ${point1State}`}/>
       <div className={`capteur-2 ${point2State}`}></div>
+      <input className={`input-2 ${point1State}`}/>
       <div className={`capteur-3 ${point3State}`}></div>
+      <input className={`input-3 ${point1State}`}/>
       <div className={`capteur-4 ${point4State}`}></div>
+      <input className={`input-4 ${point1State}`}/>
       <div className={`capteur-5 ${point5State}`}></div>
+      <input className={`input-5 ${point1State}`}/>
       <div className={`capteur-6 ${point6State}`}></div>
+      <input className={`input-6 ${point1State}`}/>
       <div className={`capteur-7 ${point7State}`}></div>
+      <input className={`input-7 ${point1State}`}/>
       <div className={`capteur-8 ${point8State}`}></div>
+      <input className={`input-8 ${point1State}`}/>
       <div className={`capteur-9 ${point9State}`}></div>
+      <input className={`input-9 ${point1State}`}/>
       <div className={`capteur-10 ${point10State}`}></div>
+      <input className={`input-10 ${point1State}`}/>
       {data.map((d, i) => (
           
               <Icon  key={i} style={{ left: d.x, top: d.y }} icon="material-symbols:location-on" className="location-icon"  />
