@@ -18,137 +18,130 @@ const Map = () => {
   const [point8State, setPoint8State] = useState("default");
   const [point9State, setPoint9State] = useState("default");
   const [point10State, setPoint10State] = useState("default");
+  const [point11State, setPoint11State] = useState("default");
+  const [point12State, setPoint12State] = useState("default");
   
-  const [data, setdata] = useState([]);
+  const [index, setIndex] = useState(0);
+  const [data, setData] = useState([]);
 
 // Using useEffect for single rendering
 useEffect(() => {
-    // Using fetch to fetch the api from 
-    // flask server it will be redirected to proxy
-    const intervalId = setInterval(() => {
-      fetch("/distance_s")
-        .then(res => res.json())
-        .then(data => {
-          set(data);
+  // Using fetch to fetch the api from 
+  // flask server it will be redirected to proxy
+  const intervalId = setInterval(() => {
+    fetch("/data")
+      .then(res => res.json())
+      .then(data => {
+        setData(data);
 
-        const range = 300;
-            const point1 = document.querySelector(".capteur-1");
-            const point1Position = point1.getBoundingClientRect();
-            if (d.x > (point1Position.left - 80) && d.x < (point1Position.right + 100) && d.y > (point1Position.top - range) && d.y < (point1Position.bottom + range)) {
-              setPoint1State("highlighted");
-            } else {
-              setPoint1State("default");
-            }
         
-            const point2 = document.querySelector(".capteur-2");
-            const point2Position = point2.getBoundingClientRect();
-            if (d.x > (point2Position.left +10)  && d.y > (point2Position.top - 70) && d.y < (point2Position.bottom + 70)) {
-              setPoint2State("highlighted");
-            } else {
-              setPoint2State("default");
-            }
-        
-            const point3 = document.querySelector(".capteur-3");
-            const point3Position = point3.getBoundingClientRect();
-            if (d.x > (point3Position.left - 120) && d.x < (point3Position.right + 5) && d.y > (point3Position.top -10) && d.y < (point3Position.bottom +range )) {
-              setPoint3State("highlighted");
-            } else {
-              setPoint3State("default");
-            }
-        
-            const point4 = document.querySelector(".capteur-4");
-            const point4Position = point4.getBoundingClientRect();
-            if (d.x > (point4Position.left - 140) && d.x < (point4Position.right + 0) && d.y > (point4Position.top - 300) && d.y < (point4Position.bottom + range)) {
-              setPoint4State("highlighted");
-            } else {
-              setPoint4State("default");
-            }
-        
-            const point5 = document.querySelector(".capteur-5");
-            const point5Position = point5.getBoundingClientRect();
-            if (d.x > (point5Position.left - 80) && d.x < (point5Position.right + 100) && d.y > (point5Position.top - range) && d.y < (point5Position.bottom + range)) {
-              setPoint5State("highlighted");
-            } else {
-              setPoint5State("default");
-            }
-        
-            const point6 = document.querySelector(".capteur-6");
-            const point6Position = point6.getBoundingClientRect();
-            if (d.x > (point6Position.left)  && d.x < (point6Position.right+  350) && d.y > (point6Position.top - 70) && d.y < (point6Position.bottom + 70)) {
-              setPoint6State("highlighted");
-            } else {
-              setPoint6State("default");
-            }
-        
-            const point7 = document.querySelector(".capteur-7");
-            const point7Position = point7.getBoundingClientRect();
-            if (d.x > (point7Position.left - 210) && d.x < (point7Position.right +160) && d.y > (point7Position.top - 100) && d.y < (point7Position.bottom + 10)) {
-              setPoint7State("highlighted");
-            } else {
-              setPoint7State("default");
-            }
-        
-            const point8 = document.querySelector(".capteur-8");
-            const point8Position = point8.getBoundingClientRect();
-            if (d.x > (point8Position.left - 150) && d.x < (point8Position.right + 65) && d.y > (point8Position.top - 80) && d.y < (point8Position.bottom + 100)) {
-              setPoint8State("highlighted");
-            } else {
-              setPoint8State("default");
-            }
-        
-            const point9 = document.querySelector(".capteur-9");
-            const point9Position = point9.getBoundingClientRect();
-            if (d.x > (point9Position.left+60) && d.x < (point9Position.right +150) && d.y < (point9Position.top +100) && d.y < (point9Position.bottom + 80)) {
-              setPoint9State("highlighted");
-            } else {
-              setPoint9State("default");
-            }
-        
-            const point10 = document.querySelector(".capteur-10");
-            const point10Position = point10.getBoundingClientRect();
-            if (d.x > (point10Position.left-10) && d.x < (point10Position.right +210) && d.y > (point10Position.top -30) && d.y < (point10Position.bottom + 190)) {
-              setPoint10State("highlighted");
-            } else {
-              setPoint10State("default");
-            }
+          if (d.name==="capteur_1"){
+            setPoint1State("highlighted");
+          } else {
+            setPoint1State("default");
+          }
+      
 
-            
-        })
-        .catch(error => console.error("Error:", error));
-      }, 1000);
+          if (d.name==="capteur_2") {
+            setPoint2State("highlighted");
+          } else {
+            setPoint2State("default");
+          }
 
-      return () => clearInterval(intervalId);
-    }, []);
+          const setPoint3State = document.querySelector(".capteur-3");
+          if (d.name==="capteur_3") {
+            setPoint3State("highlighted");
+          } else {
+            setPoint3State("default");
+          }
+      
+          if (d.name==="capteur_4") {
+            setPoint4State("highlighted");
+          } else {
+            setPoint4State("default");
+          }
+      
+          if (d.name==="capteur_5") {
+            setPoint5State("highlighted");
+          } else {
+            setPoint5State("default");
+          }
+      
+          if (d.name==="capteur_6") {
+            setPoint6State("highlighted");
+          } else {
+            setPoint6State("default");
+          }
 
+          if (d.name==="capteur_7") {
+            setPoint7State("highlighted");
+          } else {
+            setPoint7State("default");
+          }
+
+          if (d.name==="capteur_8") {
+            setPoint8State("highlighted");
+          } else {
+            setPoint8State("default");
+          }
+      
+          if (d.name==="capteur_9") {
+            setPoint9State("highlighted");
+          } else {
+            setPoint9State("default");
+          }
+      
+  
+          if (d.name==="capteur_9") {
+            setPoint10State("highlighted");
+          } else {
+            setPoint10State("default");
+          }
+
+  
+          if (d.name==="capteur_10") {
+            setPoint11State("highlighted");
+          } else {
+            setPoint11State("default");
+          }
+
+          if (d.name==="capteur_12") {
+            setPoint12State("highlighted");
+          } else {
+            setPoint12State("default");
+          }
+
+          
+      })
+      .catch(error => console.error("Error:", error));
+    }, 1000);
+
+    return () => clearInterval(intervalId);
+  }, []);
 
     return(
     <div  className="map" style={{backgroundSize:"contain",backgroundRepeat:"no-repeat",backgroundPosition:"center",objectFit:"cover"}}>
       <img className="imageback" src={Ai} alt=""></img>
       <div className={`capteur-1 ${point1State}`}></div>
-      <input className={`input-1 ${point1State}`}/>
       <div className={`capteur-2 ${point2State}`}></div>
-      <input className={`input-2 ${point1State}`}/>
       <div className={`capteur-3 ${point3State}`}></div>
-      <input className={`input-3 ${point1State}`}/>
       <div className={`capteur-4 ${point4State}`}></div>
-      <input className={`input-4 ${point1State}`}/>
       <div className={`capteur-5 ${point5State}`}></div>
-      <input className={`input-5 ${point1State}`}/>
       <div className={`capteur-6 ${point6State}`}></div>
-      <input className={`input-6 ${point1State}`}/>
       <div className={`capteur-7 ${point7State}`}></div>
-      <input className={`input-7 ${point1State}`}/>
       <div className={`capteur-8 ${point8State}`}></div>
-      <input className={`input-8 ${point1State}`}/>
       <div className={`capteur-9 ${point9State}`}></div>
-      <input className={`input-9 ${point1State}`}/>
       <div className={`capteur-10 ${point10State}`}></div>
-      <input className={`input-10 ${point1State}`}/>
+      <div className={`capteur-11 ${point11State}`}></div>
+      <div className={`capteur-12 ${point12State}`}></div>
+      
       {data.map((d, i) => (
           
               <Icon  key={i} style={{ left: d.x, top: d.y }} icon="material-symbols:location-on" className="location-icon"  />
-
+              
       ))}
+
+      
 
       </div>
       

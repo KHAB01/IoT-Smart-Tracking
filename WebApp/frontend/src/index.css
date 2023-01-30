@@ -33,7 +33,6 @@ body {
 
 
 
-
   .capteur-1 {
     width: 20px;
     height: 20px;
@@ -44,106 +43,7 @@ body {
     left: calc(50% - 100px);
     z-index: 1; /* set the stack order of the element */
   }
-  .input-1 {
-    width: 50px;
-    height: 20px;
-    border-radius: 20%; /* make the element circular */
-    background-color: white;
-    position: absolute; /* position the element according to the nearest positioned ancestor */
-    top: 5px; /* position the element at the top */
-    left: calc(50% - 160px);
-    z-index: 1; /* set the stack order of the element */
-  }
-  .input-2 {
-    width: 50px;
-    height: 20px;
-    border-radius: 20%; /* make the element circular */
-    background-color: white;
-    position: absolute; /* position the element according to the nearest positioned ancestor */
-    top:6px; /* position the element at the top */
-    left: calc(50% + 105px);
-    z-index: 1; /* set the stack order of the element */
-  }
-  .input-3 {
-    width: 50px;
-    height: 20px;
-    border-radius: 20%; /* make the element circular */
-    background-color: white;
-    position: absolute; /* position the element according to the nearest positioned ancestor */
-    top: 75px; /* position the element at the top */
-    left: calc(50% - 240px);
-    z-index: 1; /* set the stack order of the element */
-  }
-  .input-4 {
-    width: 50px;
-    height: 20px;
-    border-radius: 20%; /* make the element circular */
-    background-color: white;
-    position: absolute; /* position the element according to the nearest positioned ancestor */
-    top: 188px; /* position the element at the top */
-    left: calc(50% - 270px);
-    z-index: 1; /* set the stack order of the element */
-  }
-  .input-5 {
-    width: 50px;
-    height: 20px;
-    border-radius: 20%; /* make the element circular */
-    background-color: white;
-    position: absolute; /* position the element according to the nearest positioned ancestor */
-    top: 115px; /* position the element at the top */
-    left: calc(50% + 200px);
-    z-index: 1; /* set the stack order of the element */
-  }
-  .input-6 {
-    width: 50px;
-    height: 20px;
-    border-radius: 20%; /* make the element circular */
-    background-color: white;
-    position: absolute; /* position the element according to the nearest positioned ancestor */
-    top: 298px; /* position the element at the top */
-    left: calc(50% - 240px);
-    z-index: 1; /* set the stack order of the element */
-  }
-  .input-7 {
-    width: 50px;
-    height: 20px;
-    border-radius: 20%; /* make the element circular */
-    background-color: white;
-    position: absolute; /* position the element according to the nearest positioned ancestor */
-    top: 190px; /* position the element at the top */
-    left: calc(50% - 70px);
-    z-index: 1; /* set the stack order of the element */
-  }
-  .input-8 {
-    width: 50px;
-    height: 20px;
-    border-radius: 20%; /* make the element circular */
-    background-color: white;
-    position: absolute; /* position the element according to the nearest positioned ancestor */
-    top: 370px; /* position the element at the top */
-    left: calc(50% - 165px);
-    z-index: 1; /* set the stack order of the element */
-  }
-  .input-9 {
-    width: 50px;
-    height: 20px;
-    border-radius: 20%; /* make the element circular */
-    background-color: white;
-    position: absolute; /* position the element according to the nearest positioned ancestor */
-    top: 280px; /* position the element at the top */
-    left: calc(50% + 190px);
-    z-index: 1; /* set the stack order of the element */
-  }
-  .input-10 {
-    width: 50px;
-    height: 20px;
-    border-radius: 20%; /* make the element circular */
-    background-color: white;
-    position: absolute; /* position the element according to the nearest positioned ancestor */
-    top: 375px; /* position the element at the top */
-    left: calc(50% + 85px);
-    z-index: 1; /* set the stack order of the element */
-  }
+ 
   .highlighted {
     box-shadow:  0 1px 10px 5px red ;
   }
@@ -158,17 +58,30 @@ body {
 
   }
 
-  .capteur-3 {
+  .capteur-10 {
     width: 20px;
     height: 20px;
     border-radius: 50%; /* make the element circular */
     background-color: red;
     position: absolute; /* position the element according to the nearest positioned ancestor */
     z-index: 1; /* set the stack order of the element */
-    top: 120px; /* position the element at the top */
-    left: calc(50% + 175px);
+    top: 60px; /* position the element at the top */
+    left: calc(50% + 140px);
   }
-  .capteur-4 {
+
+  .capteur-9 {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%; /* make the element circular */
+    background-color: red;
+    position: absolute; /* position the element according to the nearest positioned ancestor */
+    z-index: 1; /* set the stack order of the element */
+    top: 135px; /* position the element at the top */
+    left: calc(50% + 180px);
+  }
+
+
+  .capteur-6 {
     width: 20px;
     height: 20px;
     border-radius: 50%; /* make the element circular */
@@ -190,7 +103,7 @@ body {
     left: calc(50% - 100px);
   }
 
-  .capteur-6 {
+  .capteur-3 {
     width: 20px;
     height: 20px;
     border-radius: 50%; /* make the element circular */
@@ -207,10 +120,22 @@ body {
     background-color: red;
     position: absolute; /* position the element according to the nearest positioned ancestor */
     z-index: 1; /* set the stack order of the element */
-    left: calc(50% + 165px);
-    bottom:100px;
+    left: calc(50% + 130px);
+    top:330px;
   }
+
   .capteur-8 {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%; /* make the element circular */
+    background-color: red;
+    position: absolute; /* position the element according to the nearest positioned ancestor */
+    z-index: 1; /* set the stack order of the element */
+    left: calc(50% + 180px);
+    top:255px;
+  }
+
+  .capteur-11 {
     width: 20px;
     height: 20px;
     border-radius: 50%; /* make the element circular */
@@ -221,7 +146,7 @@ body {
     left: calc(50% + 80px);
     top:10px;
   }
-  .capteur-9 {
+  .capteur-4 {
     width: 20px;
     height: 20px;
     border-radius: 50%; /* make the element circular */
@@ -232,7 +157,7 @@ body {
     left: calc(50% - 180px);
     top:300px;
   }
-  .capteur-10 {
+  .capteur-12 {
     width: 20px;
     height: 20px;
     border-radius: 50%; /* make the element circular */
