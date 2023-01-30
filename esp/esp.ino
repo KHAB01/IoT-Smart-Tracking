@@ -88,10 +88,10 @@ void callback(char *topic, byte *payload, unsigned int length)
 }
 void sensorData(){
      if(Serial2.available()>0){
-    char buff[5];
+    char buff[10];
      incomingString = Serial2.readStringUntil('\n');
-     subString = incomingString.substring(0,4);
-     subString.toCharArray(buff,5);
+     subString = incomingString.substring(0,9);
+     subString.toCharArray(buff,10);
      Serial.println(buff);
      client.publish("distance/s",buff,true);
      incomingString="";

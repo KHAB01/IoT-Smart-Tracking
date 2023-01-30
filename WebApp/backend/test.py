@@ -29,8 +29,6 @@ def get_time():
             yf = data[i]['y']
             d = data[i]['d']
         d=data[i]
-        
-
         d = d*0.6
         y = d/(sqrt(1+tan(15)**2))
         x = sqrt(d**2-y**2)
