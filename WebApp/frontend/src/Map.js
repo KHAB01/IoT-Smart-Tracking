@@ -8,6 +8,25 @@ import { Icon } from "@iconify/react"
 
 
 const Map = () => {
+
+  
+  const [index, setIndex] = useState(0);
+  const [data, setData] = useState([]);
+
+// Using useEffect for single rendering
+useEffect(() => {
+  const intervalId = setInterval(() => {
+  fetch("/data")
+  .then(res => res.json())
+  .then(data => {
+  setData(data);
+  })
+  .catch(error => console.error("Error:", error));
+  }, 1000);
+  
+  return () => clearInterval(intervalId);
+  }, []);
+  
   const [point1State, setPoint1State] = useState("default");
   const [point2State, setPoint2State] = useState("default");
   const [point3State, setPoint3State] = useState("default");
@@ -21,103 +40,51 @@ const Map = () => {
   const [point11State, setPoint11State] = useState("default");
   const [point12State, setPoint12State] = useState("default");
   
-  const [index, setIndex] = useState(0);
-  const [data, setData] = useState([]);
+  useEffect(() => {
+  data.forEach(d => {
+  switch (d.name) {
+  case "capteur_1":
+  setPoint1State("highlighted");
+  break;
+  case "capteur_2":
+  setPoint2State("highlighted");
+  break;
+  case "capteur_3":
+  setPoint3State("highlighted");
+  break;
+  case "capteur_4":
+  setPoint4State("highlighted");
+  break;
+  case "capteur_5":
+  setPoint5State("highlighted");
+  break;
+  case "capteur_6":
+  setPoint5State("highlighted");
+  break;
+  case "capteur_7":
+  setPoint5State("highlighted");
+  break;
+  case "capteur_8":
+  setPoint5State("highlighted");
+  break;
+  case "capteur_9":
+  setPoint5State("highlighted");
+  break;
+  case "capteur_10":
+    setPoint5State("highlighted");
+    break;
+    case "capteur_11":
+  setPoint5State("highlighted");
+  break;
+  case "capteur_12":
+    setPoint5State("highlighted");
+  break;
 
-// Using useEffect for single rendering
-useEffect(() => {
-  // Using fetch to fetch the api from 
-  // flask server it will be redirected to proxy
-  const intervalId = setInterval(() => {
-    fetch("/data")
-      .then(res => res.json())
-      .then(data => {
-        setData(data);
-
-        
-          if (d.name==="capteur_1"){
-            setPoint1State("highlighted");
-          } else {
-            setPoint1State("default");
-          }
-      
-
-          if (d.name==="capteur_2") {
-            setPoint2State("highlighted");
-          } else {
-            setPoint2State("default");
-          }
-
-          const setPoint3State = document.querySelector(".capteur-3");
-          if (d.name==="capteur_3") {
-            setPoint3State("highlighted");
-          } else {
-            setPoint3State("default");
-          }
-      
-          if (d.name==="capteur_4") {
-            setPoint4State("highlighted");
-          } else {
-            setPoint4State("default");
-          }
-      
-          if (d.name==="capteur_5") {
-            setPoint5State("highlighted");
-          } else {
-            setPoint5State("default");
-          }
-      
-          if (d.name==="capteur_6") {
-            setPoint6State("highlighted");
-          } else {
-            setPoint6State("default");
-          }
-
-          if (d.name==="capteur_7") {
-            setPoint7State("highlighted");
-          } else {
-            setPoint7State("default");
-          }
-
-          if (d.name==="capteur_8") {
-            setPoint8State("highlighted");
-          } else {
-            setPoint8State("default");
-          }
-      
-          if (d.name==="capteur_9") {
-            setPoint9State("highlighted");
-          } else {
-            setPoint9State("default");
-          }
-      
-  
-          if (d.name==="capteur_9") {
-            setPoint10State("highlighted");
-          } else {
-            setPoint10State("default");
-          }
-
-  
-          if (d.name==="capteur_10") {
-            setPoint11State("highlighted");
-          } else {
-            setPoint11State("default");
-          }
-
-          if (d.name==="capteur_12") {
-            setPoint12State("highlighted");
-          } else {
-            setPoint12State("default");
-          }
-
-          
-      })
-      .catch(error => console.error("Error:", error));
-    }, 1000);
-
-    return () => clearInterval(intervalId);
-  }, []);
+  default:
+  break;
+  }
+  });
+  }, [data]);
 
     return(
     <div  className="map" style={{backgroundSize:"contain",backgroundRepeat:"no-repeat",backgroundPosition:"center",objectFit:"cover"}}>

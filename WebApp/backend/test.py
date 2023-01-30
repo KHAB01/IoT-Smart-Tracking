@@ -5,7 +5,7 @@ from math import *
 
 # Initializing flask app
 app = Flask(__name__)
-data = {'capteur_3': 180}
+data = {'capteur_3': 100}
 captors = {
     'capteur_1': {'x': 412, 'y': 10},
     'capteur_2': {'x': 332, 'y': 80},
@@ -57,8 +57,7 @@ def get_time():
             x = sqrt(d**2-y**2)
             dataa.append({'x': xf+x, 'y': yf+y,'name': captor})
         elif captor == "capteur_3":
-            y = d/(sqrt(1+tan(15)**2))
-            x = sqrt(d**2-y**2)
+            x = d
             dataa.append({'x': xf+x, 'y': yf,'name': captor})
         elif captor == "capteur_4":
             y = d/(sqrt(1+tan(15)**2))
