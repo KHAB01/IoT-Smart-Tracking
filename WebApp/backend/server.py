@@ -27,6 +27,9 @@ def handle_connect(client, userdata, flags, rc):
         print('Bad connection. Code:', rc)   
 @client.on_message()
 def handle_mqtt_message(client, userdata, message):
+    topic = message.topic
+    payload = message.payload.decode()
+    data[topic] = payload
     
     if float(message.payload.decode()[10:])>=2:
         data = dict(
