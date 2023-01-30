@@ -36,7 +36,7 @@ void getDistance(){
     distance[i]=0;
     delay(150);
     distance[i]=sonar[i].ping_cm();
-    Serial.print("S_");
+    Serial.print("capteur_");
     Serial.print(i+1);
     Serial.print(" ");
     Serial.print(distance[i]);

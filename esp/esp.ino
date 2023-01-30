@@ -8,7 +8,7 @@ String subString;
 const char *ssid = "FABLAB";
 const char *password = "FAB@2022";
 const char *device_id = "ai";
-const char *mqtt_server = "192.168.10.18";
+const char *mqtt_server = "192.168.10.19";
 const int mqtt_port = 1883;
 
 unsigned long previousMillis = 0,previousMillis1=0;
@@ -55,7 +55,7 @@ void connectTo(){
     client.setServer(mqtt_server, mqtt_port);
     client.setCallback(callback);
     /***/
-    client.publish("distance/s", device_id, true);
+    client.publish("distance_s", device_id, true);
 }
 void reconnect()
 {
@@ -67,7 +67,7 @@ void reconnect()
         {
             Serial.println("Connected to MQTT");
             client.subscribe("Distance_Sensor");
-            client.publish("distance/s", device_id, true);
+            client.publish("distance_s", device_id, true);
         }
         else
         {
@@ -88,12 +88,12 @@ void callback(char *topic, byte *payload, unsigned int length)
 }
 void sensorData(){
      if(Serial2.available()>0){
-    char buff[10];
+    char buff[15];
      incomingString = Serial2.readStringUntil('\n');
-     subString = incomingString.substring(0,9);
-     subString.toCharArray(buff,10);
+     subString = incomingString.substring(0,14);
+     subString.toCharArray(buff,15);
      Serial.println(buff);
-     client.publish("distance/s",buff,true);
+     client.publish("distance_s",buff,true);
      incomingString="";
 }
 }
