@@ -53,7 +53,10 @@ def handle_mqtt_message(client, userdata, message):
             time=datetime.today()
         )
         
-        collection.insert_one(data)
+       
+        #print(data)
+        #return data
+    
 
         
 @app.route("/data")
@@ -62,65 +65,73 @@ def index():
     xf = 0
     yf = 0
     dataa=[]
-        
-    for captor, value in data.items():
+
+
+   
+    for captor in data.keys():
+        dataa=[]
+        print(captor)
+
         captor_dict = captors[data['capteur']]
+        print(captor_dict)
         captor_dict['Distance'] = data['Distance']
+        captor_dict['captor'] = data['capteur']
 
         xf = captor_dict['x']
         yf = captor_dict['y']
         d = captor_dict['Distance']
         d = d*0.6
-        if captor == "capteur_1":
-            y = d/(sqrt(1+tan(30)**2))
-            x = sqrt(d**2-y**2)
-            dataa.append({'x': xf+x, 'y': yf+y,'name': captor})
-            print(dataa)
-        elif captor == "capteur_2":
-            y = d/(sqrt(1+tan(30)**2))
-            x = sqrt(d**2-y**2)
-            dataa.append({'x': xf+x, 'y': yf+y,'name': captor})
-        elif captor == "capteur_3":
-            y = d/(sqrt(1+tan(15)**2))
-            x = sqrt(d**2-y**2)
-            dataa.append({'x': xf+x, 'y': yf,'name': captor})
-        elif captor == "capteur_4":
-            y = d/(sqrt(1+tan(15)**2))
-            x = sqrt(d**2-y**2)
-            dataa.append({'x': xf+x, 'y': yf-y,'name': captor})
-        elif captor == "capteur_5":
-            y = d/(sqrt(1+tan(60)**2))
-            x = sqrt(d**2-y**2)
-            dataa.append({'x': xf+x, 'y': yf-y,'name': captor})
-        elif captor == "capteur_6":
-            y = d/(sqrt(1+tan(60)**2))
-            x = sqrt(d**2-y**2)
-            dataa.append({'x': xf-x, 'y': yf-y,'name': captor})
-        elif captor == "capteur_7":
-            y = d/(sqrt(1+tan(60)**2))
-            x = sqrt(d**2-y**2)
-            dataa.append({'x': xf-x, 'y': yf-y,'name': captor})
-        elif captor == "capteur_8":
-            y = d/(sqrt(1+tan(60)**2))
-            x = sqrt(d**2-y**2)
-            dataa.append({'x': xf-x, 'y': yf-y,'name': captor})
-        elif captor == "capteur_9":
-            y = d/(sqrt(1+tan(60)**2))
-            x = sqrt(d**2-y**2)
-            dataa.append({'x': xf-x, 'y': yf+y,'name': captor})
-        elif captor == "capteur_10":
-            y = d/(sqrt(1+tan(60)**2))
-            x = sqrt(d**2-y**2)
-            dataa.append({'x': xf-x, 'y': yf+y,'name': captor})
-        elif captor == "capteur_11":
-            y = d/(sqrt(1+tan(60)**2))
-            x = sqrt(d**2-y**2)
-            dataa.append({'x': xf-x, 'y': yf+y, 'name': captor})
 
-        elif captor == "capteur_12":
+        if captor_dict['captor'] == "capteur_1":
+            y = d/(sqrt(1+tan(30)**2))
+            x = sqrt(d**2-y**2)
+            dataa.append({'x': xf+x, 'y': yf+y,'name': captor_dict['captor']})
+
+        elif captor_dict['captor'] == "capteur_2":
+            y = d/(sqrt(1+tan(30)**2))
+            x = sqrt(d**2-y**2)
+            dataa.append({'x': xf+x, 'y': yf+y,'name': captor_dict['captor']})
+        elif captor_dict['captor'] == "capteur_3":
+            y = d/(sqrt(1+tan(15)**2))
+            x = sqrt(d**2-y**2)
+            dataa.append({'x': xf+x, 'y': yf,'name': captor_dict['captor']})
+        elif captor_dict['captor'] == "capteur_4":
+            y = d/(sqrt(1+tan(15)**2))
+            x = sqrt(d**2-y**2)
+            dataa.append({'x': xf+x, 'y': yf-y,'name': captor_dict['captor']})
+        elif captor_dict['captor'] == "capteur_5":
+            y = d/(sqrt(1+tan(60)**2))
+            x = sqrt(d**2-y**2)
+            dataa.append({'x': xf+x, 'y': yf-y,'name': captor_dict['captor']})
+        elif captor_dict['captor'] == "capteur_6":
+            y = d/(sqrt(1+tan(60)**2))
+            x = sqrt(d**2-y**2)
+            dataa.append({'x': xf-x, 'y': yf-y,'name': captor_dict['captor']})
+        elif captor_dict['captor'] == "capteur_7":
+            y = d/(sqrt(1+tan(60)**2))
+            x = sqrt(d**2-y**2)
+            dataa.append({'x': xf-x, 'y': yf-y,'name': captor_dict['captor']})
+        elif captor_dict['captor'] == "capteur_8":
+            y = d/(sqrt(1+tan(60)**2))
+            x = sqrt(d**2-y**2)
+            dataa.append({'x': xf-x, 'y': yf-y,'name': captor_dict['captor']})
+        elif captor_dict['captor'] == "capteur_9":
+            y = d/(sqrt(1+tan(60)**2))
+            x = sqrt(d**2-y**2)
+            dataa.append({'x': xf-x, 'y': yf+y,'name': captor_dict['captor']})
+        elif captor_dict['captor'] == "capteur_10":
+            y = d/(sqrt(1+tan(60)**2))
+            x = sqrt(d**2-y**2)
+            dataa.append({'x': xf-x, 'y': yf+y,'name': captor_dict['captor']})
+        elif captor_dict['captor'] == "capteur_11":
+            y = d/(sqrt(1+tan(60)**2))
+            x = sqrt(d**2-y**2)
+            dataa.append({'x': xf-x, 'y': yf+y, 'name': captor_dict['captor']})
+
+        elif captor_dict['captor'] == "capteur_12":
             y = d
             x = sqrt(d**2-y**2)
-            dataa.append({'x': xf+x, 'y': yf , 'name': captor})
-    return jsonify(data)
+            dataa.append({'x': xf+x, 'y': yf , 'name': captor_dict['captor']})
+    return jsonify(dataa)
 if __name__ == '__main__':
     app.run(host='127.0.0.1/', port=5000)

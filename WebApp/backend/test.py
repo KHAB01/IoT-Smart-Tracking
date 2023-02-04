@@ -5,7 +5,7 @@ from math import *
 
 # Initializing flask app
 app = Flask(__name__)
-data = {'capteur_3': 100}
+data = {'capteur_10': 215}
 captors = {
     'capteur_1': {'x': 412, 'y': 10},
     'capteur_2': {'x': 332, 'y': 80},
@@ -30,15 +30,7 @@ def get_time():
     yf = 0
     dataa=[]
     
-    # for i in range(0, len(data)):
-        # if data[i]['d'] != 0 :
-        #     # xf = data[i]['x']
-        #     # yf = data[i]['y']
-        #     # d = data[i]['d']
-        # d=data[i]
-        # d = d*0.6
-        # y = d/(sqrt(1+tan(60)**2))
-        # x = sqrt(d**2-y**2)
+
     for captor, value in data.items():
         
         captor_dict = captors[captor]
@@ -48,22 +40,23 @@ def get_time():
         d = captor_dict['d']
         d = d*0.6
         if captor == "capteur_1":
-            y = d/(sqrt(1+tan(30)**2))
+            y = d/(sqrt(1+tan(60)**2))
             x = sqrt(d**2-y**2)
             dataa.append({'x': xf+x, 'y': yf+y,'name': captor})
-            print(dataa)
+        
         elif captor == "capteur_2":
-            y = d/(sqrt(1+tan(30)**2))
+            y = d/(sqrt(1+tan(45)**2))
             x = sqrt(d**2-y**2)
             dataa.append({'x': xf+x, 'y': yf+y,'name': captor})
         elif captor == "capteur_3":
-            x = d
+            x = d*1.2
             dataa.append({'x': xf+x, 'y': yf,'name': captor})
         elif captor == "capteur_4":
             y = d/(sqrt(1+tan(15)**2))
             x = sqrt(d**2-y**2)
             dataa.append({'x': xf+x, 'y': yf-y,'name': captor})
         elif captor == "capteur_5":
+            d=d*1.2
             y = d/(sqrt(1+tan(60)**2))
             x = sqrt(d**2-y**2)
             dataa.append({'x': xf+x, 'y': yf-y,'name': captor})
@@ -72,29 +65,29 @@ def get_time():
             x = sqrt(d**2-y**2)
             dataa.append({'x': xf-x, 'y': yf-y,'name': captor})
         elif captor == "capteur_7":
-            y = d/(sqrt(1+tan(60)**2))
+            y = d/(sqrt(1+tan(40)**2))
             x = sqrt(d**2-y**2)
             dataa.append({'x': xf-x, 'y': yf-y,'name': captor})
         elif captor == "capteur_8":
-            y = d/(sqrt(1+tan(60)**2))
+            y = d/(sqrt(1+tan(40)**2))
             x = sqrt(d**2-y**2)
             dataa.append({'x': xf-x, 'y': yf-y,'name': captor})
         elif captor == "capteur_9":
-            y = d/(sqrt(1+tan(60)**2))
+            y = d/(sqrt(1+tan(30)**2))
             x = sqrt(d**2-y**2)
             dataa.append({'x': xf-x, 'y': yf+y,'name': captor})
         elif captor == "capteur_10":
-            y = d/(sqrt(1+tan(60)**2))
+            y = d/(sqrt(1+tan(40)**2))
             x = sqrt(d**2-y**2)
             dataa.append({'x': xf-x, 'y': yf+y,'name': captor})
         elif captor == "capteur_11":
-            y = d/(sqrt(1+tan(60)**2))
+            y = d/(sqrt(1+tan(40)**2))
             x = sqrt(d**2-y**2)
             dataa.append({'x': xf-x, 'y': yf+y, 'name': captor})
 
         elif captor == "capteur_12":
-            y = d
-            x = sqrt(d**2-y**2)
+            
+            x = d*0.7
             dataa.append({'x': xf+x, 'y': yf , 'name': captor})
 
 

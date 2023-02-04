@@ -48,7 +48,7 @@ body {
     box-shadow:  0 1px 10px 5px red ;
   }
 
-  .capteur-2 {
+  .capteur-12 {
     width: 20px;
     height: 20px;
     border-radius: 50%; /* make the element circular */
@@ -157,7 +157,7 @@ body {
     left: calc(50% - 180px);
     top:300px;
   }
-  .capteur-12 {
+  .capteur-2 {
     width: 20px;
     height: 20px;
     border-radius: 50%; /* make the element circular */

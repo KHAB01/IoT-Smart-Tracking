@@ -59,30 +59,45 @@ useEffect(() => {
   setPoint5State("highlighted");
   break;
   case "capteur_6":
-  setPoint5State("highlighted");
+  setPoint6State("highlighted");
   break;
   case "capteur_7":
-  setPoint5State("highlighted");
+  setPoint7State("highlighted");
   break;
   case "capteur_8":
-  setPoint5State("highlighted");
+  setPoint8State("highlighted");
   break;
   case "capteur_9":
-  setPoint5State("highlighted");
+  setPoint9State("highlighted");
   break;
   case "capteur_10":
-    setPoint5State("highlighted");
+    setPoint10State("highlighted");
     break;
     case "capteur_11":
-  setPoint5State("highlighted");
+  setPoint11State("highlighted");
   break;
   case "capteur_12":
-    setPoint5State("highlighted");
+    setPoint12State("highlighted");
   break;
 
   default:
   break;
   }
+  setTimeout(() => {
+    setPoint1State("default");
+    setPoint2State("default");
+    setPoint3State("default");
+    setPoint4State("default");
+    setPoint5State("default");
+    setPoint6State("default");
+    setPoint7State("default");
+    setPoint8State("default");
+    setPoint9State("default");
+    setPoint10State("default");
+    setPoint11State("default");
+    setPoint12State("default");
+    // ... and so on for other points
+  }, 1000);
   });
   }, [data]);
 
