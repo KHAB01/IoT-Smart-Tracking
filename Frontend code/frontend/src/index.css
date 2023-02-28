@@ -1,0 +1,171 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;
+  }
+  
+  .map{
+
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+
+ 
+}
+
+
+
+.imageback{
+    width: 400px;
+    border-radius: 50%;
+    
+}
+
+
+.location-icon {
+    font-size: 2rem;
+    color: rgb(43, 0, 255);
+    position: absolute;
+ 
+  }
+
+
+
+  .capteur-1 {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%; /* make the element circular */
+    background-color: red;
+    position: absolute; /* position the element according to the nearest positioned ancestor */
+    top: 10px; /* position the element at the top */
+    left: calc(50% - 100px);
+    z-index: 1; /* set the stack order of the element */
+  }
+ 
+  .highlighted {
+    box-shadow:  0 1px 10px 5px red ;
+  }
+
+  .capteur-12 {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%; /* make the element circular */
+    background-color: red;
+    position: absolute; /* position the element according to the nearest positioned ancestor */
+    z-index: 1; /* set the stack order of the element */
+
+  }
+
+  .capteur-10 {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%; /* make the element circular */
+    background-color: red;
+    position: absolute; /* position the element according to the nearest positioned ancestor */
+    z-index: 1; /* set the stack order of the element */
+    top: 60px; /* position the element at the top */
+    left: calc(50% + 140px);
+  }
+
+  .capteur-9 {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%; /* make the element circular */
+    background-color: red;
+    position: absolute; /* position the element according to the nearest positioned ancestor */
+    z-index: 1; /* set the stack order of the element */
+    top: 135px; /* position the element at the top */
+    left: calc(50% + 180px);
+  }
+
+
+  .capteur-6 {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%; /* make the element circular */
+    background-color: red;
+    position: absolute; /* position the element according to the nearest positioned ancestor */
+    z-index: 1; /* set the stack order of the element */
+    bottom:5px; /* position the element at the top */
+    left: calc(50% + 60px);
+  }
+
+  .capteur-5 {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%; /* make the element circular */
+    background-color: red;
+    position: absolute; /* position the element according to the nearest positioned ancestor */
+    z-index: 1; /* set the stack order of the element */
+    top: 375px; /* position the element at the top */
+    left: calc(50% - 100px);
+  }
+
+  .capteur-3 {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%; /* make the element circular */
+    background-color: red;
+    position: absolute; /* position the element according to the nearest positioned ancestor */
+    z-index: 1; /* set the stack order of the element */
+ /* position the element at the top */
+    left: calc(50% - 210px);
+  }
+  .capteur-7 {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%; /* make the element circular */
+    background-color: red;
+    position: absolute; /* position the element according to the nearest positioned ancestor */
+    z-index: 1; /* set the stack order of the element */
+    left: calc(50% + 130px);
+    top:330px;
+  }
+
+  .capteur-8 {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%; /* make the element circular */
+    background-color: red;
+    position: absolute; /* position the element according to the nearest positioned ancestor */
+    z-index: 1; /* set the stack order of the element */
+    left: calc(50% + 180px);
+    top:255px;
+  }
+
+  .capteur-11 {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%; /* make the element circular */
+    background-color: red;
+    position: absolute; /* position the element according to the nearest positioned ancestor */
+    z-index: 1; /* set the stack order of the element */
+ /* position the element at the top */
+    left: calc(50% + 80px);
+    top:10px;
+  }
+  .capteur-4 {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%; /* make the element circular */
+    background-color: red;
+    position: absolute; /* position the element according to the nearest positioned ancestor */
+    z-index: 1; /* set the stack order of the element */
+ /* position the element at the top */
+    left: calc(50% - 180px);
+    top:300px;
+  }
+  .capteur-2 {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%; /* make the element circular */
+    background-color: red;
+    position: absolute; /* position the element according to the nearest positioned ancestor */
+    z-index: 1; /* set the stack order of the element */
+ /* position the element at the top */
+    left: calc(50% - 180px);
+    top:80px;
+  }
+

@@ -1,0 +1,2 @@
+It is written in python using software tool Flask
+ip: localhost:5000

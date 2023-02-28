@@ -1,0 +1,2 @@
+Frontend code is written using javascript with software tool React js 
+ip localhost:3000
